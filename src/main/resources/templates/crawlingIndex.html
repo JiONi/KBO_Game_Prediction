@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--<script src="../resources/static/js/jquery-3.4.1.min.js" />-->
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function callCrawlingUrl() {
+        $.ajax({
+            type: 'post',
+            url: "https://koreabaseball.com/Player/Search.aspx",
+            data: {"ctl00$ctl00$ctl00$cphContents$cphContents$cphContents$ddlTeam": "OB"},
+            success: function (data) {
+                $("#area").html(data);
+            }
+
+        });
+    }
+</script>

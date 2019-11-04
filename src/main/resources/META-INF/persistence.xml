@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="koreabaseball"> <!-- 영속성 유닛, 일반적으로 연결할 데이터베이스당 하나의 영속성 유닛을 등록한다. -->
+        <properties>
+
+            <!-- 필수 속성 -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- JDBC 드라이버 -->
+            <property name="javax.persistence.jdbc.user" value="jiwon" /> <!-- 데이터베이스 접속 아이디 -->
+            <property name="javax.persistence.jdbc.password" value="passwd" /> <!-- 데이터베이스 접속 비밀번호 -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/korea_baseball" /> <!-- 데이터베이스 접속 URL -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" /> <!-- 데이터베이스 방언 설정 -->
+
+            <!-- 옵션 -->
+            <property name="hibernate.show_sql" value="true" /> <!-- 하이버네이트가 실핸한 SQL을 출력한다. -->
+            <property name="hibernate.format_sql" value="true" /> <!-- 하이버네이트가 실행한 SQL을 출력할 때 보기 쉽게 정렬한다 -->
+            <property name="hibernate.use_sql_comments" value="true" /> <!-- 쿼리를 출력할 때 주석도 함께 출력한다 -->
+            <property name="hibernate.id.new_generator_mappings" value="true" /> <!-- JPA 표준에 맞춘 새로운 키 생성 전략을 사용한다 -->
+
+            <property name="hibernate.hbm2ddl.auto" value="update" />   <!-- 애플리케이션 실행 시점에 데이터베이스 테이블을 자동으로 생성 -->
+        </properties>
+    </persistence-unit>
+</persistence>
